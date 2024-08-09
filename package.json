@@ -1,0 +1,17 @@
+{
+  "name": "mongoose",
+  "version": "1.0.0",
+  "description": "how to use mongoose module in node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm install mongoose"
+  },
+  "keywords": [
+    "mongoose"
+  ],
+  "author": "sunil kumar",
+  "license": "MIT",
+  "dependencies": {
+    "mongoose": "^8.5.2"
+  }
+}
