@@ -12,6 +12,7 @@
   "author": "sunil kumar",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.19.2",
     "mongoose": "^8.5.2"
   }
 }

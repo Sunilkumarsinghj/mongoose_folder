@@ -1,0 +1,53 @@
+const mongoose=require('mongoose');
+const url='mongodb://localhost:27017/e-comm';
+     mongoose.connect(url);
+    const definedSchema= new mongoose.Schema({
+    name:String,
+    brand:String,
+    price:Number,
+    category:String  
+    });
+
+const saveInDB=async ()=>{
+  const product= mongoose.model('products',definedSchema);
+   const data=new product(
+                          {name:"iphone 15",
+                           price:66000,
+                           brand:"apple",
+                           category:"phone"}
+                          ).save();
+   const result=await data;
+   console.log(result)    
+
+}
+
+// saveInDB();
+
+const updateInDB=async ()=>{
+  const products=mongoose.model('products',definedSchema);
+  let data=await products.updateMany(
+    {name:"iphone 15"},
+    {
+      $set:{name:"iphone 16",price:80000}
+
+    });
+
+    console.log(data)
+}
+
+// updateInDB();
+
+const deleteInDB=async ()=>{
+  const products=mongoose.model('products',definedSchema);
+  let data=await products.deleteOne({name:"iphone 16"})
+  console.log(data);
+}
+// deleteInDB()
+
+const findInDB=async ()=>{
+  const products=mongoose.model('products',definedSchema);
+  let data=await products.find({name:"ideapad 3"})
+  console.log(data);
+}
+
+findInDB();
